@@ -1,0 +1,42 @@
+.SideboardApp{
+	text-align: center;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.Sideboard{
+	height: 250px;
+	width: 250px;
+	text-align: center;
+	padding: 10px;
+	display: inline-block;
+}
+
+.Sideboard canvas{
+	width: 100%;
+	height: 100%;
+}
+
+.NewButton{
+	background-color: #44AA66;
+	border: 1px solid gray;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 10px;
+}
+
+.NewButton:active{
+	background-color: #55BB77;
+	border: 1px solid #BBBBBB;
+}
+
+.SaveButton{
+	margin: 10px;
+}
+
+h1{
+	color: #335588;
+	text-shadow: 2px 3px 2px #8899DD;
+}

@@ -1,3 +1,5 @@
+require('dotenv').config({ path: './config/.env' });
+
 const express = require("express");
 const app = express();
 const {Sequelize, DataTypes} = require("sequelize");
@@ -9,6 +11,7 @@ app.use(express.json());
 
 /*********ROUTES*********/
 app.get("/", (req, res) => {
+	//This route is just here to note that the server has started
 	res.send("Hello World!");
 	res.redirect("/");
 });
@@ -40,10 +43,18 @@ app.post("/save", async (req, res) => {
 });
 /*******END ROUTES*******/
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 
-//TODO: load from config
-const sequelize = new Sequelize('');
+const sequelize = new Sequelize(
+	process.env.DATABASE,
+	process.env.DATABASE_USER,
+	process.env.DATABASE_PASSWORD,
+	{
+		host: process.env.DATABASE_HOST,
+		port: process.env.DATABASE_PORT,
+		dialect: 'postgres',
+	},
+);
 
 //Start sequelize, connect to database
 sequelize.authenticate().then(() => {
