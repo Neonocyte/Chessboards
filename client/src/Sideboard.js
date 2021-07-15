@@ -332,10 +332,10 @@ const SideboardApp = (props) => {
 	*/
 	let [chessboards, setChessboards] = useState([]);
 	
-	let [startingTurns, setTurns] = useState([Colors.W]);
+	let [startingTurns, setTurns] = useState([]);
 	let keyCount = useRef(0);
 	let [keys, setKeys] = useState([keyCount.current]);
-	let [startingKings, setKings] = useState([[[4, 0], [4, 7]]]);
+	let [startingKings, setKings] = useState([]);
 	let [showInfo, setInfo]= useState(true);
 	let messages = useRef([]);
 	let turnMessages = useRef([]);
